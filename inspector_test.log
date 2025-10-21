@@ -1,0 +1,4 @@
+2025-10-21 19:51:26,771 - workflow - INFO - Runtime stats: {'message': 'No executions tracked'}
+2025-10-21 19:51:26,771 - workflow - INFO - Node research executions: 0
+2025-10-21 19:51:26,771 - workflow - INFO - Node critique executions: 0
+2025-10-21 19:51:26,771 - workflow - INFO - Node moderator executions: 0

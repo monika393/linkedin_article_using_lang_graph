@@ -313,6 +313,12 @@ START → RESEARCH → DRAFT → CRITIQUE → [DECISION POINT]
 
 ### Visual Graph Representation
 
+Our system generates interactive HTML visualizations and static PNG graphs showing the complete LangGraph workflow structure:
+
+![LangGraph Workflow](langgraph_workflow.png)
+
+*Complete LangGraph workflow with START/END nodes, conditional edges, and revision loops*
+
 Our system generates interactive HTML visualizations showing:
 
 - **Node Types**: Initial (green), Conditional (orange), Revision (blue), Final (purple)

@@ -6,3 +6,23 @@
 2025-10-21 17:29:43,303 - __main__ - INFO - Starting article generation for topic: Optimizations in LLM for Saving Carbon Consumption: Green AI Strategies for Sustainable Development
 2025-10-21 17:29:43,303 - __main__ - INFO - Calling workflow.generate_article with export_files=True
 2025-10-21 17:29:43,304 - __main__ - ERROR - Article generation failed: 'Config' object has no attribute 'get'
+2025-10-21 20:31:19,206 - __main__ - INFO - Starting LinkedIn Article Generation System
+2025-10-21 20:31:19,206 - __main__ - INFO - Configuration status displayed
+2025-10-21 20:31:19,206 - __main__ - INFO - Configuration validated successfully
+2025-10-21 20:31:19,206 - __main__ - INFO - Initializing LinkedInArticleWorkflow...
+2025-10-21 20:31:19,864 - __main__ - INFO - Workflow initialized successfully
+2025-10-21 20:31:19,864 - __main__ - INFO - Starting article generation for topic: Optimizations in LLM for Saving Carbon Consumption: Green AI Strategies for Sustainable Development
+2025-10-21 20:31:19,864 - __main__ - INFO - Calling workflow.generate_article with export_files=True
+2025-10-21 20:31:19,864 - __main__ - INFO - Using output directory: output_new
+2025-10-21 20:31:19,869 - linkedin_article_workflow - INFO - LangGraph workflow - Nodes: 11, Edges: 0
+2025-10-21 20:31:19,869 - linkedin_article_workflow - INFO - Nodes: ['__start__', 'research', 'draft', 'critique', 'moderator', 'additional_research', 'image', 'post', 'seo', 'final_assembly', '__end__']
+2025-10-21 20:31:19,869 - linkedin_article_workflow - INFO - Edges: []
+2025-10-21 20:31:19,977 - linkedin_article_workflow - INFO - LangGraph PNG visualization saved to: langgraph_workflow.png
+2025-10-21 20:31:19,988 - utils.visualization_utils - INFO - Visual graph saved to: workflow_graph.html
+2025-10-21 20:31:19,988 - linkedin_article_workflow - INFO - Workflow HTML visualization saved to: workflow_graph.html
+2025-10-21 20:31:19,990 - linkedin_article_workflow - INFO - LangGraph workflow - Nodes: 11, Edges: 0
+2025-10-21 20:31:19,990 - linkedin_article_workflow - INFO - Nodes: ['__start__', 'research', 'draft', 'critique', 'moderator', 'additional_research', 'image', 'post', 'seo', 'final_assembly', '__end__']
+2025-10-21 20:31:19,990 - linkedin_article_workflow - INFO - Edges: []
+2025-10-21 20:31:20,098 - linkedin_article_workflow - INFO - LangGraph PNG visualization saved to: langgraph_workflow.png
+2025-10-21 20:31:20,198 - linkedin_article_workflow - INFO - Standalone PNG visualization saved to: workflow_graph.png
+2025-10-21 20:31:20,198 - __main__ - ERROR - Article generation failed: 'int' object is not subscriptable

@@ -5,6 +5,16 @@ Article to Evaluate:
 
 Original Topic: {topic}
 
+Research Data Available:
+{research_data}
+
+Revision Context:
+- Current revision: {revision_count}/{max_revisions}
+- Research calls made: {research_calls}
+- Additional research calls: {additional_research_calls}
+- Previous feedback: {previous_feedback}
+- Total agent calls: {agent_call_log_length}
+
 Evaluate the article on these criteria:
 
 1. AUTHENTICITY & ACCURACY
@@ -41,7 +51,16 @@ Evaluate the article on these criteria:
    - Research data is comprehensive and sufficient for the topic scope
    - Includes recent developments and current industry trends
 
-6. STORYTELLING QUALITY & ENGAGEMENT
+6. RESEARCH INTEGRATION & UTILIZATION
+   - Article effectively uses the available research data
+   - Research findings are properly integrated into the narrative
+   - No important research insights are missing from the article
+   - Research data is synthesized coherently with the storytelling
+   - Technical details from research are accurately represented
+   - Case studies and examples from research are properly utilized
+   - Research data supports all major claims and arguments
+
+7. STORYTELLING QUALITY & ENGAGEMENT
    - Uses compelling narrative structure with clear beginning, middle, end
    - Includes relatable characters, scenarios, or case studies
    - Balances storytelling with technical accuracy
@@ -61,4 +80,19 @@ ISSUES:
 
 If PASS: YES, just say "PASS: YES" with no issues.
 
-SPECIAL NOTE: If you identify research-related issues (insufficient data, missing sources, outdated information, lack of recent developments), be specific about what additional research is needed.
+REVISION CONTEXT EVALUATION:
+- If this is revision {revision_count} or higher, be more strict about quality
+- If additional research was conducted ({additional_research_calls} calls), ensure it's properly integrated
+- Consider whether the article has improved from previous revisions
+- If multiple research calls were made, verify all research is utilized effectively
+- Previous feedback was: {previous_feedback}
+- Total execution history: {agent_call_log_length} agent calls made
+
+EXECUTION HISTORY CONTEXT:
+- This is revision {revision_count} out of {max_revisions} maximum
+- Research has been called {research_calls} times initially
+- Additional research has been called {additional_research_calls} times
+- Previous critique feedback: {previous_feedback}
+- Consider if the article has addressed previous feedback effectively
+
+SPECIAL NOTE: If you identify research-related issues (insufficient data, missing sources, outdated information, lack of recent developments), be specific about what additional research is needed. Also consider whether the available research data is being fully utilized in the article.

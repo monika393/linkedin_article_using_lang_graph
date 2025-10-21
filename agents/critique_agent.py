@@ -55,6 +55,7 @@ class CritiqueAgent:
             research_calls=research_calls,
             additional_research_calls=additional_research_calls,
             agent_call_log=agent_call_log,
+            agent_call_log_length=len(agent_call_log),
             previous_feedback=previous_feedback
         )
 

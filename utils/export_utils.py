@@ -55,7 +55,7 @@ def export_to_word(article_data: Dict[str, Any], output_path: str) -> str:
     doc.add_heading('Article Content', level=1)
     
     # Parse and format the article content
-    article_text = article_data['article']
+    article_text = article_data.get('article', '')
     lines = article_text.split('\n')
     
     for line in lines:
@@ -308,6 +308,27 @@ def export_image_to_jpeg(article_data: Dict[str, Any], output_path: str,
         # Use placeholder image
         image_prompt = article_data.get('image_prompt', 'LinkedIn Article Image')
         return create_placeholder_fallback(image_prompt, output_path)
+    
+    return output_path
+
+
+def create_placeholder_fallback(image_prompt: str, output_path: str) -> str:
+    """
+    Create a high-quality placeholder image when DALL-E fails
+    
+    Args:
+        image_prompt: The prompt that was used for image generation
+        output_path: Path where to save the placeholder image
+        
+    Returns:
+        Path to the saved placeholder image
+    """
+    # Create a professional placeholder image
+    image = create_placeholder_image(image_prompt)
+    
+    # Save as JPEG
+    image.save(output_path, 'JPEG', quality=95)
+    print(f"✅ Placeholder image saved to: {output_path}")
     
     return output_path
 

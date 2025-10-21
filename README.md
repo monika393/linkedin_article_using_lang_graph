@@ -228,98 +228,13 @@ Our system consists of 7 specialized agents working in a coordinated workflow:
 
 ## Workflow Visualization
 
-### Text-Based Flow
-```
-START → RESEARCH → DRAFT → CRITIQUE → [DECISION POINT]
-                                    ↓
-                              [REVISE] ← [ADDITIONAL RESEARCH]
-                                    ↓
-                              [CRITIQUE] (loop until pass)
-                                    ↓
-                              [IMAGE] → [POST] → [SEO] → [FINAL] → END
-```
-
-### Agent Relationship Diagram
-```
-                    ┌─────────────────┐
-                    │   RESEARCH      │
-                    │   AGENT         │
-                    └─────────┬───────┘
-                              │
-                    ┌─────────▼───────┐
-                    │   DRAFT          │
-                    │   AGENT          │
-                    └─────────┬───────┘
-                              │
-                    ┌─────────▼───────┐
-                    │   CRITIQUE      │
-                    │   AGENT         │
-                    └─────────┬───────┘
-                              │
-                    ┌─────────▼───────┐
-                    │   DECISION      │
-                    │   POINT         │
-                    └─────┬─────┬─────┘
-                          │     │
-                    ┌─────▼─┐   │   ┌─────────────────┐
-                    │ REVISE│   │   │ ADDITIONAL      │
-                    │ AGENT │◄──┘   │ RESEARCH        │
-                    └───────┘       │ AGENT           │
-                          │         └─────────────────┘
-                          │                   │
-                          │                   │
-                    ┌─────▼───────┐           │
-                    │   CRITIQUE  │◄──────────┘
-                    │   (LOOP)    │
-                    └─────┬───────┘
-                          │
-                    ┌─────▼───────┐
-                    │   PASS      │
-                    └─────┬───────┘
-                          │
-                    ┌─────▼───────┐    ┌─────────────┐    ┌─────────────┐
-                    │   IMAGE      │───▶│    POST     │───▶│     SEO     │
-                    │   AGENT      │    │   AGENT     │    │   AGENT     │
-                    └──────────────┘    └─────────────┘    └─────────────┘
-                          │                   │                   │
-                          │                   │                   │
-                    ┌─────▼───────────────────▼───────────────────▼───────┐
-                    │                FINAL ASSEMBLY                        │
-                    │              (Word + JPEG Export)                   │
-                    └─────────────────────────────────────────────────────┘
-```
-
-### State Flow Visualization
-```
-┌─────────────────────────────────────────────────────────────────────────┐
-│                           ARTICLE STATE                                │
-├─────────────────────────────────────────────────────────────────────────┤
-│ topic: str                    │ Input topic for research              │
-│ research_data: str            │ Comprehensive research content        │
-│ article: str                  │ Generated article (9000-10000 words)   │
-│ critique_feedback: list[str]  │ Quality feedback from critique         │
-│ critique_passed: bool         │ Quality gate status                    │
-│ revision_count: int          │ Number of revision cycles               │
-│ research_calls: int          │ Initial research calls made             │
-│ additional_research_calls: int│ Additional research triggered          │
-│ agent_call_log: list[dict]   │ Complete execution tracking            │
-│ image_prompt: str            │ DALL-E compatible image prompt         │
-│ linkedin_post: str           │ LinkedIn post (900-1200 chars)          │
-│ hashtags: list[str]          │ Generated hashtags                     │
-│ seo_keywords: list[str]       │ SEO optimization keywords              │
-│ final_output: dict           │ Complete output package                 │
-└─────────────────────────────────────────────────────────────────────────┘
-```
-
 ### Visual Graph Representation
-
-Our system generates interactive HTML visualizations and static PNG graphs showing the complete LangGraph workflow structure:
 
 ![LangGraph Workflow](langgraph_workflow.png)
 
 *Complete LangGraph workflow with START/END nodes, conditional edges, and revision loops*
 
-Our system generates interactive HTML visualizations showing:
+The system generates interactive HTML visualizations and static PNG graphs showing:
 
 - **Node Types**: Initial (green), Conditional (orange), Revision (blue), Final (purple)
 - **Call Counts**: Actual execution statistics for each node

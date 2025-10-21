@@ -24,6 +24,10 @@ class ArticleState(TypedDict):
     critique_passed: bool
     revision_count: int
     max_revisions: int
+    # Execution tracking
+    research_calls: int
+    additional_research_calls: int
+    agent_call_log: list
     # Parallel outputs
     image_prompt: str
     image_url: str
@@ -545,25 +549,52 @@ Revisions Made: {revisions_made}"""
     
     def _should_continue_revision(self, state: ArticleState) -> str:
         """Decide whether to revise, do additional research, or proceed to generation"""
+        
+        # Log decision context
+        logger.info(f"Conditional edge decision - Critique passed: {state.get('critique_passed', False)}")
+        logger.info(f"Revision count: {state.get('revision_count', 0)}/{state.get('max_revisions', 3)}")
+        logger.info(f"Research calls: {state.get('research_calls', 0)}, Additional: {state.get('additional_research_calls', 0)}")
+        
         if state["critique_passed"]:
+            logger.info("Article passed critique - proceeding to generation")
             return "generate"
         elif state["revision_count"] >= state["max_revisions"]:
+            logger.warning(f"Max revisions ({state['max_revisions']}) reached. Proceeding anyway.")
             print(f"Max revisions ({state['max_revisions']}) reached. Proceeding anyway.")
             return "generate"
         else:
-            # Check if we need additional research
+            # Enhanced research need detection using new state information
             feedback = state.get('critique_feedback', [])
+            research_calls = state.get('research_calls', 0)
+            additional_research_calls = state.get('additional_research_calls', 0)
+            research_data_length = len(state.get('research_data', ''))
+            
+            logger.info(f"Evaluating research needs - Feedback: {len(feedback)} issues, Research data: {research_data_length} chars")
+            
+            # Check for research-related keywords in feedback
             needs_more_research = any(keyword in str(feedback).lower() for keyword in [
                 'insufficient research', 'lack of data', 'missing sources', 'outdated information',
                 'need more research', 'incomplete research', 'limited sources', 'more data needed',
                 'insufficient data', 'lack of sources', 'missing research', 'incomplete data',
                 'limited research', 'need more data', 'insufficient sources', 'more research needed',
-                'recent developments', 'current trends', 'latest information', 'up-to-date sources'
+                'recent developments', 'current trends', 'latest information', 'up-to-date sources',
+                'research integration', 'utilize research', 'use research data', 'incorporate research'
             ])
             
-            if needs_more_research:
+            # Additional heuristics for research needs
+            research_data_insufficient = research_data_length < 2000  # Less than 2000 chars of research
+            no_additional_research_yet = additional_research_calls == 0
+            multiple_research_attempts = research_calls + additional_research_calls >= 2
+            
+            # Decision logic with enhanced context
+            if needs_more_research and (no_additional_research_yet or research_data_insufficient):
+                logger.info("Additional research needed based on critique feedback")
                 return "additional_research"
+            elif needs_more_research and multiple_research_attempts:
+                logger.info("Research already attempted multiple times - proceeding with revision")
+                return "revise"
             else:
+                logger.info("Proceeding with revision based on feedback")
                 return "revise"
     
     def _final_assembly(self, state: ArticleState) -> ArticleState:

@@ -28,11 +28,34 @@ class CritiqueAgent:
     def __call__(self, state: Dict[str, Any]) -> Dict[str, Any]:
         """Evaluate article quality against criteria"""
         
-        logger.info(f"Starting critique evaluation for article length: {len(state.get('article', ''))} chars")
+        article_length = len(state.get('article', ''))
+        research_length = len(state.get('research_data', ''))
+        revision_count = state.get('revision_count', 0)
+        research_calls = state.get('research_calls', 0)
+        additional_research_calls = state.get('additional_research_calls', 0)
+        
+        logger.info(f"Starting critique evaluation:")
+        logger.info(f"  - Article length: {article_length} chars")
+        logger.info(f"  - Research data length: {research_length} chars")
+        logger.info(f"  - Revision count: {revision_count}")
+        logger.info(f"  - Research calls: {research_calls}")
+        logger.info(f"  - Additional research calls: {additional_research_calls}")
+        
+        # Extract all relevant state information
+        max_revisions = state.get('max_revisions', 3)
+        agent_call_log = state.get('agent_call_log', [])
+        previous_feedback = state.get('critique_feedback', [])
         
         prompt = self.prompt_template.format(
             article=state['article'],
-            topic=state['topic']
+            topic=state['topic'],
+            research_data=state.get('research_data', ''),
+            revision_count=revision_count,
+            max_revisions=max_revisions,
+            research_calls=research_calls,
+            additional_research_calls=additional_research_calls,
+            agent_call_log=agent_call_log,
+            previous_feedback=previous_feedback
         )
 
         messages = [SystemMessage(content=prompt)]

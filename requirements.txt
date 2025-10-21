@@ -1,0 +1,29 @@
+# LinkedIn Article Generation System Requirements
+
+# Core LangGraph and LangChain dependencies
+langgraph>=0.2.0
+langchain>=0.3.0
+langchain-openai>=0.2.0
+langchain-core>=0.3.0
+
+# OpenAI API
+openai>=1.0.0
+
+# Data processing and utilities
+pydantic>=2.0.0
+typing-extensions>=4.0.0
+
+# Document and image export
+python-docx>=1.1.0    # For Word document creation
+Pillow>=10.0.0        # For image processing
+requests>=2.31.0      # For downloading images from URLs
+
+# Environment and utilities
+python-dotenv>=1.0.0  # For environment variable management
+rich>=13.0.0          # For beautiful console output
+tqdm>=4.65.0          # For progress bars
+
+# Development and testing
+pytest>=7.0.0
+black>=23.0.0
+flake8>=6.0.0

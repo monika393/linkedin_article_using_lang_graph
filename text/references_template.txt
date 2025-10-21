@@ -1,0 +1,41 @@
+REFERENCES FORMATTING TEMPLATE
+
+Use this format for the References section at the end of articles:
+
+ACADEMIC PAPERS:
+Author(s). (Year). Title. Journal/Conference Name, Volume(Issue), pages. DOI/URL
+
+Example:
+Smith, J., & Johnson, A. (2024). "AI Agents in Software Development: A Comprehensive Study." IEEE Transactions on Software Engineering, 50(3), 245-260. https://doi.org/10.1109/TSE.2024.1234567
+
+INDUSTRY REPORTS:
+Organization. (Year). Report Title. Publisher. URL
+
+Example:
+Gartner. (2024). "AI Development Tools Market Analysis 2024." Gartner Research. https://www.gartner.com/reports/ai-tools-2024
+
+TECH COMPANY PUBLICATIONS:
+Company. (Year). "Publication Title." Company Research Blog/Whitepaper. URL
+
+Example:
+OpenAI. (2024). "GPT-4 Technical Report: Capabilities and Limitations." OpenAI Research. https://openai.com/research/gpt-4-technical-report
+
+GOVERNMENT/INSTITUTIONAL SOURCES:
+Agency. (Year). "Report Title." Government/Institution Name. URL
+
+Example:
+National Science Foundation. (2024). "AI Research Funding Trends 2024." NSF. https://www.nsf.gov/ai-research-2024
+
+NEWS ARTICLES:
+Author. (Year, Month Day). "Article Title." Publication Name. URL
+
+Example:
+Thompson, M. (2024, March 15). "AI Agents Transform Software Development." MIT Technology Review. https://www.technologyreview.com/ai-agents-2024
+
+REQUIREMENTS:
+- Include publication year (2023-2025)
+- Provide accessible URLs when possible
+- Use consistent formatting throughout
+- Order alphabetically by first author's last name
+- Include DOI for academic papers when available
+- Verify all URLs are accessible and current

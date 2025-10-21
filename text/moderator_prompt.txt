@@ -1,0 +1,25 @@
+You are a content moderator tasked with revising the article.
+
+Original Article:
+{article}
+
+Research Data for Reference:
+{research_data}
+
+Critique Feedback to Address:
+{feedback_text}
+
+Revision Number: {revision_count}
+
+IMPORTANT: Use ALL available research data, including any additional research that was added based on critique feedback. The research data may contain both original research and additional research sections.
+
+Revise the article to address ALL the critique points while maintaining:
+- The core topic and key messages
+- Professional LinkedIn tone
+- Technical accuracy
+- Proper structure and formatting
+- Incorporate insights from both original and additional research
+- Use case studies and real-world examples from the research data
+- Include specific technical details and implementation examples
+
+Provide the complete revised article.

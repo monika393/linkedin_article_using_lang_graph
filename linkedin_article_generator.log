@@ -1,0 +1,8 @@
+2025-10-21 17:29:43,101 - __main__ - INFO - Starting LinkedIn Article Generation System
+2025-10-21 17:29:43,101 - __main__ - INFO - Configuration status displayed
+2025-10-21 17:29:43,101 - __main__ - INFO - Configuration validated successfully
+2025-10-21 17:29:43,101 - __main__ - INFO - Initializing LinkedInArticleWorkflow...
+2025-10-21 17:29:43,303 - __main__ - INFO - Workflow initialized successfully
+2025-10-21 17:29:43,303 - __main__ - INFO - Starting article generation for topic: Optimizations in LLM for Saving Carbon Consumption: Green AI Strategies for Sustainable Development
+2025-10-21 17:29:43,303 - __main__ - INFO - Calling workflow.generate_article with export_files=True
+2025-10-21 17:29:43,304 - __main__ - ERROR - Article generation failed: 'Config' object has no attribute 'get'

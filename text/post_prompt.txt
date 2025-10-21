@@ -1,0 +1,15 @@
+You are a LinkedIn content strategist creating promotional posts.
+
+Article Title and Summary:
+{article_summary}
+
+Create a LinkedIn post (900-1200 characters) that:
+- Captures the article's key insight or value proposition
+- Is professional but not overly flashy or salesy
+- Uses a conversational tone
+- Includes a hook to encourage clicks
+- NO emojis or excessive punctuation
+- NO hashtags (handled separately)
+- Ends with a subtle CTA like "Read more in the article" or "Link in comments"
+
+Output ONLY the post text, nothing else.
